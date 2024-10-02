@@ -1,0 +1,159 @@
+* {
+	box-sizing: border-box;
+
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
+
+body {
+	margin: 0;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	font-family: $font-family-base;
+	font-weight: $font-weight-base;
+	color: $text-color;
+	background: $color-white;
+	min-width: 320px;
+
+	// Tablet styles
+	@media (min-width: 768px) and (max-width: 1024px) {
+		
+	}
+
+	// Desktop styles
+	@media (min-width: 1025px) {
+		body {
+			font-size: $font-size-desktop;
+			line-height: $line-height-desktop;
+		}
+	}
+}
+
+img {
+	border-style: none;
+}
+
+header,
+footer,
+section,
+nav,
+article,
+aside {
+	display: block;
+}
+
+p {
+	margin: 0 0 20px;
+}
+
+strong,
+b {
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 30px;
+	line-height: 40px;
+	font-weight: 700;
+	margin: 0 0 20px;
+
+	@media (min-width: 1025px) {
+		font-size: 40px;
+		line-height: 52px;
+	}
+}
+
+h2 {
+	font-size: 22px;
+	line-height: 32px;
+	font-weight: 700;
+	margin: 0 0 12px;
+
+	@media (min-width: 768px) {
+		margin: 0 0 16px;
+	}
+}
+
+.wrapper {
+	position: relative;
+	min-height: 100vh;
+	background-color: $color-light-brown;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding-bottom: 40px;
+	
+	&__background {
+		background-image: url(../img/WhereYourMoneyGoes-Mobile.png);
+		background-size: 100% auto;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		padding-top: 125%;
+
+		@media (min-width: 768px) {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			padding-top: 0;
+			background-image: url(../img/WhereYourMoneyGoes-Desktop.png);
+			background-size: cover;
+			background-position: 50% 50%;
+		}
+
+		@media (min-width: 1025px) {
+			background-position: 0 0;
+		}
+	}
+	
+	@media (min-width: 768px) {
+		justify-content: center;
+		padding-top: 40px;
+	}
+}
+
+.container {
+	position: relative;
+	z-index: 2;
+	margin: 0 auto;
+	padding-left: 24px;
+	padding-right: 24px;
+	width: 100%;
+	max-width: 1280px;
+
+	&.mobile-background {
+		margin-top: -169px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 180px;
+			background: linear-gradient(to top, rgba($color-light-brown, 1) 0%, rgba($color-light-brown, .8) 60%, rgba($color-light-brown, .01) 100%);
+		}
+
+		@media (min-width: 768px) {
+			margin-top: 0;
+	
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}

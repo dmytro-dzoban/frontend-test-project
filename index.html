@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Test Project</title>
+	<link rel="stylesheet" href="dist/css/main.min.css">
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="wrapper__background"></div>
+		<div class="container mobile-background">
+			<section class="info-box">
+				<h1 class="info-box__heading">Where your money goes</h1>
+				<div class="info-box__text">
+					<p>We’re committed to making sure your donation has the biggest possible impact for those in
+						greatest need.</p>
+					<p><strong>Select the numbers below to see how every pound you donate is used...</strong></p>
+				</div>
+				<div class="tabs">
+					<nav class="tabs__nav" role="tablist">
+						<button class="tabs__button color-purple active" data-tab="tab1" role="tab" aria-selected="true"
+							aria-controls="tab1">
+							<span class="sr-only">See how 78p of your donation is spent</span>78p
+						</button>
+						<button class="tabs__button color-blue" data-tab="tab2" role="tab" aria-selected="false"
+							aria-controls="tab2">
+							<span class="sr-only">See how 22p of your donation is spent</span>22p
+						</button>
+					</nav>
+					<div class="tabs__content">
+						<div id="tab1" class="tabs__item tab color-purple active" role="tabpanel" aria-labelledby="tab1-button">
+							<h2>78p funds life-changing projects</h2>
+							<p>That includes ensuring earthquake survivors like Saleh in Syria have food and shelter and
+								empowering the Lihukwa villagers in Zambia.</p>
+						</div>
+						<div id="tab2" class="tabs__item tab color-blue" role="tabpanel" aria-labelledby="tab2-button">
+							<h2>22p ensures we can continue to transform lives tomorrow</h2>
+							<p>That includes fundraising and support costs, which allows us to make sure your donation
+								has a long-term impact.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/js/main.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+.info-box {
+	background-color: $color-white;
+	border-radius: 10px;
+	padding: 20px;
+	position: relative;
+	z-index: 5;
+	
+	@media (min-width: 768px) {
+		max-width: 464px;
+		border-radius: 8px;
+		float: right;
+	}
+	
+	@media (min-width: 1025px) {
+		max-width: 624px;
+		padding: 32px;
+		border-radius: 10px;
+	}
+
+	&__heading {
+		margin: 0 0 20px;
+		padding-bottom: 20px;
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 48px;
+			height: 4px;
+			background-color: $color-light-blue;
+		}
+	}
+}

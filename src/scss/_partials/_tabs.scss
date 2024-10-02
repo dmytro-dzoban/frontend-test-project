@@ -1,0 +1,108 @@
+.tabs {
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__button {
+		cursor: pointer;
+		display: inline-block;
+		vertical-align: top;
+		font-size: 20px;
+		line-height: 26px;
+		font-weight: 700;
+		border: none;
+		border-radius: 6px;
+		width: calc(50% - 4px);
+		text-align: center;
+		padding: 11px;
+		border-radius: 6px;
+		position: relative;
+		transition: .3s;
+
+		&.active {
+			&::after {
+				display: block;
+			}
+		}
+
+		&::after {
+			content: '';
+			display: none;
+			position: absolute;
+			bottom: -16px;
+			left: 50%;
+			margin-left: -8px;
+			width: 0px;
+			height: 0px;
+			border-style: solid;
+			border-width: 0 8px 10px 8px;
+		}
+
+		&.color-purple {
+			background-color: $color-purple;
+			color: $color-white;
+
+			&:hover {
+				background-color: rgba($color-purple, .9);
+				color: $color-white;
+			}
+
+			&::after {
+				border-color: transparent transparent $color-purple transparent;
+			}
+		}
+
+		&.color-blue {
+			background-color: $color-dark-blue;
+			color: $color-white;
+
+			&:hover {
+				background-color: rgba($color-dark-blue, .9);
+				color: $color-white;
+			}
+
+			&::after {
+				border-color: transparent transparent $color-dark-blue transparent;
+			}
+		}
+	}
+
+	&__content {
+		padding-top: 16px;
+	}
+
+	&__item {
+		display: none;
+		padding: 24px 20px;
+		border-radius: 6px;
+
+		&.active {
+			display: block;
+		}
+
+		&.color-purple {
+			background-color: $color-purple;
+			color: $color-white;
+		}
+	
+		&.color-blue {
+			background-color: $color-dark-blue;
+			color: $color-white;
+		}
+
+		@media (min-width: 768px) {
+			border-radius: 10px;
+		}
+
+		@media (min-width: 1025px) {
+			padding: 32px;
+			font-size: 18px;
+			line-height: 28px;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+}
